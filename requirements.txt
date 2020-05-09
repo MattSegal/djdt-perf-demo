@@ -1,2 +1,5 @@
 django
 django-debug-toolbar
+
+# For creating test data
+factory_boy

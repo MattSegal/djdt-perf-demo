@@ -1,0 +1,25 @@
+{% extends "forum/_base.html" %} {% block content %}
+
+<h1>{{thread.title}}</h1>
+
+<div class="ui feed">
+  {% for comment in thread.comment_set.all %}
+  <div class="event">
+    <div class="label">
+      <img src="https://api.adorable.io/avatars/{{ comment.user.id}}" />
+    </div>
+    <div class="content">
+      <div class="summary">
+        <a class="user">
+          {{ comment.user.name }}
+        </a>
+        wrote
+      </div>
+      <div class="extra text">
+        {{ comment.text }}
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+{% endblock %}

@@ -1,0 +1,18 @@
+{% extends "forum/_base.html" %} {% block content %}
+
+<h1>Threads</h1>
+<div class="ui bulleted list">
+  {% for thread in threads %}
+  <div class="item">
+    <h3>
+      <a href="{% url 'thread' thread.id %}">
+        {{ thread.title}}
+      </a>
+    </h3>
+    posted by {{ thread.creator.name}}
+  </div>
+  {% endfor %}
+</div>
+
+<h3>Join a <a href="{% url 'club-list'%}">club</a>!</h3>
+{% endblock %}

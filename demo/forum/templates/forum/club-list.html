@@ -1,0 +1,29 @@
+{% extends "forum/_base.html" %} {% block content %}
+
+<h1>Clubs</h1>
+<div class="ui cards">
+  {% for club in clubs %}
+  <div class="ui card">
+    <div class="image">
+      <img src="https://picsum.photos/id/{{club.id}}/200" />
+    </div>
+    <div class="content">
+      <a class="header">{{club.text}}</a>
+      <div class="ui list">
+        {% for person in club.user.all %}
+        <div class="item">
+          <img
+            class="ui avatar image"
+            src="https://api.adorable.io/avatars/{{ person.id}}"
+          />
+          <div class="content">
+            <a class="header">{{person.name}}</a>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+{% endblock %}
