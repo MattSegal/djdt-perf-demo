@@ -10,7 +10,7 @@ pip install -r requirements.txt
 
 # create test data
 cd demo/
-python ./manage.py setup_test_data
+./manage.py setup_test_data
 
 # run Django dev server
 ./manage.py runserver
