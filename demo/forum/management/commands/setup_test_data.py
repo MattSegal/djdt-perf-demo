@@ -1,4 +1,6 @@
 import random
+
+from django.db import transaction
 from django.core.management.base import BaseCommand
 
 from forum.models import Person, Thread, Club, Comment
@@ -8,6 +10,7 @@ from forum.factories import PersonFactory, ThreadFactory, ClubFactory, CommentFa
 class Command(BaseCommand):
     help = "Generates test data"
 
+    @transaction.atomic
     def handle(self, *args, **kwargs):
         self.stdout.write("Deleting old data...")
         Person.objects.all().delete()
