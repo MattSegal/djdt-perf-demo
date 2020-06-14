@@ -1,17 +1,20 @@
 # Demo app for DJDT database peformance guide
 
-See this [blog post](https://mattsegal.dev/django-debug-toolbar-performance.html) for more details.
+See this [blog post](https://mattsegal.dev/django-debug-toolbar-performance.html) on Django database performance for more details.
+
+Also used for [this blog post](https://mattsegal.dev/django-factoryboy-dummy-data.html) on generating dummy test data.
 
 Steps to get set up
 
 ```bash
-# install deps
+# Install dependencies
 pip install -r requirements.txt
 
-# create test data
+# Generate test data
 cd demo/
+./manage.py migrate
 ./manage.py setup_test_data
 
-# run Django dev server
+# Run Django dev server
 ./manage.py runserver
 ```
