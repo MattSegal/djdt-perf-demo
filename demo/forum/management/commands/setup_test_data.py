@@ -3,8 +3,8 @@ import random
 from django.db import transaction
 from django.core.management.base import BaseCommand
 
-from forum.models import Person, Thread, Club, Comment
-from forum.factories import PersonFactory, ThreadFactory, ClubFactory, CommentFactory
+from forum.models import User, Thread, Club, Comment
+from forum.factories import UserFactory, ThreadFactory, ClubFactory, CommentFactory
 
 
 class Command(BaseCommand):
@@ -13,14 +13,14 @@ class Command(BaseCommand):
     @transaction.atomic
     def handle(self, *args, **kwargs):
         self.stdout.write("Deleting old data...")
-        Person.objects.all().delete()
+        User.objects.all().delete()
         Thread.objects.all().delete()
         Comment.objects.all().delete()
         Club.objects.all().delete()
         self.stdout.write("Creating new data...")
         people = []
         for _ in range(50):
-            person = PersonFactory()
+            person = UserFactory()
             people.append(person)
 
         for _ in range(10):

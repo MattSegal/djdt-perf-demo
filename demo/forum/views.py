@@ -1,6 +1,6 @@
 from django.shortcuts import render
 
-from .models import Person, Thread, Comment, Club
+from .models import User, Thread, Comment, Club
 
 
 def home(request):
