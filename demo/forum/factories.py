@@ -17,6 +17,7 @@ class ThreadFactory(DjangoModelFactory):
         model = Thread
 
     title = factory.Faker("sentence", nb_words=5, variable_nb_words=True)
+    creator = factory.SubFactory(UserFactory)
 
 
 class CommentFactory(DjangoModelFactory):
