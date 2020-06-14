@@ -2,12 +2,12 @@
 import factory
 from factory.django import DjangoModelFactory
 
-from .models import Person, Club, Thread, Comment
+from .models import User, Club, Thread, Comment
 
 
-class PersonFactory(DjangoModelFactory):
+class UserFactory(DjangoModelFactory):
     class Meta:
-        model = Person
+        model = User
 
     name = factory.Faker("first_name")
 

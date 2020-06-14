@@ -17,7 +17,6 @@ class Command(BaseCommand):
         Thread.objects.all().delete()
         Comment.objects.all().delete()
         Club.objects.all().delete()
-
         self.stdout.write("Creating new data...")
         people = []
         for _ in range(50):
